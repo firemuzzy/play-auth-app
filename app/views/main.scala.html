@@ -1,0 +1,28 @@
+@(title: String)(scripts: Html)(css: Html)(content: Html)(implicit navAccountDataOpt: Option[NavAccountData])
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>@title</title>
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    @css
+  </head>
+  <body>
+    <div id="LNAV">
+      <h1><a href="@routes.Application.index">BottleCub</a></h1>
+      <div class="section">
+        <!-- <a href=""><img src="")" /><span>Profile</span></a> -->
+      </div>
+      @if(navAccountDataOpt.isDefined) {
+      <form id="LOGOUT" action="@controllers.auth.routes.AccountController.logout" method="post">
+        <input type="submit" value="log out" />
+      </form>
+      } else {
+      <a href="@controllers.auth.routes.AccountController.login">login</a>
+      }
+    </div>
+    <div id="CONTENT">@content</div>
+  </body>
+  @html.jQuery()
+  <script type="text/javascript" src="@routes.Application.javascriptRoutes"></script>
+  @scripts
+</html>

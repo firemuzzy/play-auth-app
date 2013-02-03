@@ -1,0 +1,11 @@
+@()(implicit navAccountDataOpt: Option[NavAccountData], flash: Flash)
+
+@scripts = {
+}
+
+@css = {
+}
+
+@main("Message")(scripts)(css) {
+<div>@flash.get("success").getOrElse("No message")</div>
+}

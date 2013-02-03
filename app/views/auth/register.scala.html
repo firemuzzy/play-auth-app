@@ -1,0 +1,31 @@
+@(newUserForm : Form[(String, String, String)])
+<!DOCTYPE html>
+<html class="EDIT_MODE">
+  <head>
+    <title>Register</title>
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    @html.css("bc_main", true)
+  </head>
+  <body>
+    <div id="CONTENT">
+      <form action="@controllers.auth.routes.AccountController.registerPost" class="editMode" method="post" id="NEW_USER" autocomplete="off">
+        <div class="section">
+          <h2 class="editable @if(newUserForm("email").hasErrors){error}" local_storage="email" id="name" @if(newUserForm("email").hasErrors){error="@Messages(newUserForm("email").error.map(_.message).get)"} id="email">
+          <input name="email" type="text" placeholder="New User Email" value="@newUserForm("email").value" />
+          </h2>
+
+          <div class="info">
+            @html.inputChangePassword("password", "password", "password", newUserForm)
+            @html.inputChangePassword("password2", "re-type password", "password", newUserForm)
+          </div>
+        </div>
+
+        <div id="SAVE" class="section btn_group">
+          <input class="btn bGreen" value="Create New User" type="submit" />
+        </div>
+      </form>
+    </div>
+    @html.jQuery()
+    <script>$('#email').focus()</script>
+  </body>
+</html>

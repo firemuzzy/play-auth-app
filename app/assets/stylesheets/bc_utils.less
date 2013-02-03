@@ -1,0 +1,56 @@
+@white_text: #D9D9D9;
+@red_color: #7E1E06;
+@green_color: #51A351;
+@abv_color: #934A2C;
+@orange_color: #934A2C;
+@blue_color: #3923D6;
+@yellow_color: #CDD11B;
+@text_color: #444;
+
+@tag_title_color: #777;
+@border_color: #AAA;
+
+@content_bg: #E6E6E6;
+@input_bg: #F0F0F0;
+
+@small_font_size: 11px;
+@lnav_font_size: 14px;
+@normal_font_size: 16px;
+@corner_radius: 10px;
+
+.box (@orient: horizontal, @align: stretch, @pack:start){
+  display:-webkit-box;
+  -webkit-box-align: @align;
+  -webkit-box-orient: @orient;
+  -webkit-box-pack: @pack;
+
+  display:-moz-box;
+  -moz-box-orient: @orient;
+  -moz-box-align: @align;
+  -mox-box-pack: @pack;
+
+  display:-o-box;
+  -o-box-orient: @orient;
+  -o-box-align: @align;
+  -o-box-pack: @pack;
+  
+
+  display:box;
+  box-orient: @orient;
+  box-align: @align;
+  box-pack: @pack;
+}
+
+.box-flex (@flex: 1) {
+  -webkit-box-flex: @flex;
+  -moz-box-flex: @flex;
+  -o-box-flex: @flex;
+  flex-box: @flex;
+}
+
+.makeBtn (@color) {
+  background-color: @color;
+  background-image: -webkit-linear-gradient(top, lighten(@color, 10%), @color);
+  &:hover { background-image: -webkit-linear-gradient(top, @color, @color); }
+  &:active { background-image: -webkit-linear-gradient(top, darken(@color, 10%), @color); }
+}

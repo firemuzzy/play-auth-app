@@ -1,0 +1,35 @@
+error.loginInvalid = Invalid email or password
+error.accountUnverified = Account is unverified, verify it by clicking on the emailed link
+
+error.required = Required
+error.notEmpty = Must be not empty
+error.max = Should be less than {0}
+error.min = Should be greater than {0}
+error.titleChars = Contains invalid characters {0}
+error.paragraphChars = Contains invalid characters {0}
+error.lat = Invalid lat coordinate
+error.lng = Invalid lng coordinate
+error.positiveNumber = Not a positive number
+error.uniqueEmail = Account with that email already exists
+error.notANumber = Not a number
+error.invalidPassword = Invalid password
+error.emptyList = Must select one
+
+error.matchingPasswords = Passwords did not match
+error.passResetTokenExpiered = Password reset token has expiered
+error.accountId = Invalid account id
+error.passwordResetAlreadyCompleted = Password was already reset
+
+error.strongPassword = Password must be at least 6 character
+
+error.accountVerificationNotRequested = Account verification not requested
+error.accountVerificationNotSet = Account verification not requested
+error.accountVerificationTokenNoMatch = Account verification tokens did not match
+error.accountVerificationTokenExpired = Account verification token expired
+error.accountAlreadyActivated = Account already activated
+
+
+constraint.min=Min
+constraint.max=Max
+
+constraint.strongPassword = Strong password constraint

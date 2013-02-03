@@ -1,0 +1,14 @@
+@(baseUrl: String, account: Account, verificationToken: String)
+
+@emailTemplates._main {
+  <p style="color:#444444">
+    Thank you for joining BottleCub,
+  </p>
+  <p>
+    Please validate your email by clicking the button below.
+  </p>
+  <a style="background-color: #5BB75B; color: white; padding: 8px; text-decoration:none;" href="@(baseUrl + controllers.auth.routes.AccountController.verify(account.id, verificationToken).url)" target="_blank">Validate email</a>
+  <br/>
+  <br/>
+<br/>
+}

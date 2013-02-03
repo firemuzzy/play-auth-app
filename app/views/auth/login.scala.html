@@ -1,0 +1,28 @@
+@(loginForm : Form[Option[Account]])
+
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>Login</title>
+     <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+  </head>
+  <body>
+
+    <div id="LOGIN">
+      <div class="errors">
+      @if(loginForm.hasGlobalErrors) {
+          <div>@loginForm.globalErrors.map(m => Messages(m.message))</div>
+          }
+      </div>
+      <form action="@controllers.auth.routes.AccountController.loginPost"  method="post">
+        @helper.inputText(loginForm("email"))
+        @helper.inputPassword(loginForm("password"))
+        <input class="bGreen" type="submit" value="Login">
+      </form>
+      <a href="@controllers.auth.routes.AccountController.forgotPassword">forgot password?</a>
+      <a href="@controllers.auth.routes.AccountController.register">new user?</a>
+    </div>
+    @html.jQuery()
+    <script>$('#email').focus()</script>
+  </body>
+</html>

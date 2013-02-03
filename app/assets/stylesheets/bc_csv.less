@@ -1,0 +1,99 @@
+@import "bc_utils.less";
+
+#CONTENT {
+  .section {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position:realtive;
+    a {
+      text-decoration: none;
+      display: block;
+      padding: 4px 10px;
+      color: black;
+      &:hover {
+        text-shadow: 0 0 5px lighten(@text_color, 30%);
+      }
+    }
+    &.done {
+      opacity: 0.5;
+    }
+
+    &.frame {
+      height: 400px;
+    }
+
+    &.pickupRequest {
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+      &:hover::after {
+        content:"mark complete";
+        font-weight:bold;
+        font-size:20px;
+        text-align: center;
+        color: white;
+        position:absolute;
+        width:120px;
+        height: 40px;
+        background:#51A351;
+        margin: auto;
+        z-indes:100;
+        top:0;
+        left: 0;
+        right:0;
+        bottom: 0;
+        padding: 10px;
+      }
+      &.done:hover::after {
+        content:"undo completion";
+        width: 120px;
+        background:#7E1E06;
+      }
+    }
+  }
+  #UPLOAD {
+    margin: 10px auto;
+    border: 2px dashed @tag_title_color;
+    width: 140px;
+    padding: 14px;
+    padding-left: 48px;
+    color: @tag_title_color;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-image: url('/assets/images/file_upload.png');
+      width: 48px;
+      height: 48px;
+    }
+    &.hover {
+      border-color: green;
+      background: white;
+    }
+  }
+
+  #example {
+    padding-top: 30px;
+    position: relative;
+    &:before {
+      content: "include this in your html";
+      background: #444;
+      color: #d9d9d9;
+      padding: 6px;
+      top: 0;
+      left: 0;
+      position: absolute;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      border-bottom-right-radius: 5px;
+    }
+    div {
+      padding: 10px;
+      padding-bottom: 20px;
+    }
+  }
+}

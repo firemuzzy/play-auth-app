@@ -1,0 +1,1 @@
+@(fileName: String, useMinified: Boolean)@minified=@{ if (useMinified) ".min.js" else ".js" }<script src="@routes.Assets.at("javascripts/" + fileName + minified)" type="text/javascript"></script>
